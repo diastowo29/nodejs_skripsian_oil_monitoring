@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  .row
+    .col-md-2
+        div(id='myProgress')
+            div(id='myBar')=oil + '%'
+    .col-md-3
+        if pump
+            input(id='status_r' type="checkbox" checked data-toggle="toggle" onchange="toogleChange(this)")
+        else
+            input(id='status_r' type="checkbox" data-toggle="toggle" onchange="toogleChange(this)")
+  
+  script(src="/javascripts/oil-tank.js")
