@@ -20,10 +20,12 @@ router.get('/api/:oil', function(req, res, next) {
             pumpTable.create({
               pump: false
             }).then(createdPump => {
-              res.status(200).send(createdPump)
+              console.log(createdPump)
+              res.status(200).send(createdPump.dataValues.pump)
             })
           } else {
-            res.status(200).send(pumpState)
+            console.log(pumpState)
+            res.status(200).send(pumpState.dataValues.pump)
           }
         })
       })
